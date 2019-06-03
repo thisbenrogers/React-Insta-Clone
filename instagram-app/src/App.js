@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import SearchBarContainer from "./components/SearchBar/SearchBarContainer";
 import PostsContainer from "./components/PostContainer/PostsContainer";
@@ -28,5 +29,9 @@ class App extends React.Component {
     );
   }
 }
+
+PostsContainer.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default App;
