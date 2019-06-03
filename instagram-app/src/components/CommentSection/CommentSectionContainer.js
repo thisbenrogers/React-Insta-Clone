@@ -8,8 +8,6 @@ class CommentSectionContainer extends React.Component {
       <div className="comment-section-container">
         <p>Comment Section Container</p>
         <Comment />
-        <Comment />
-        <Comment />
         <CommentInput />
       </div>
     );

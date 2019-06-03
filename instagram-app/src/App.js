@@ -3,9 +3,18 @@ import React from "react";
 import SearchBarContainer from "./components/SearchBar/SearchBarContainer";
 import PostsContainer from "./components/PostContainer/PostsContainer";
 
+import dummyData from "./dummy-data";
+
 import "./App.css";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      dummyData
+    };
+  }
+
   render() {
     return (
       <div>
@@ -14,10 +23,7 @@ class App extends React.Component {
           <SearchBarContainer />
         </header>
         <main>
-          <PostsContainer />
-          <PostsContainer />
-          <PostsContainer />
-          <PostsContainer />
+          <PostsContainer posts={this.state.dummyData} />
         </main>
       </div>
     );

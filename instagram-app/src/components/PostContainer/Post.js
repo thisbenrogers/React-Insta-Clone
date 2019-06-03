@@ -1,15 +1,16 @@
 import React from "react";
 import CommentSectionContainer from "../CommentSection/CommentSectionContainer";
+import PostHeader from "./PostHeader";
 
-class Post extends React.Component {
-  render() {
-    return (
-      <div className="post">
-        <p>post</p>
-        <CommentSectionContainer />
-      </div>
-    );
-  }
-}
+const Post = props => {
+  return (
+    <div className="post">
+      <PostHeader thumb={props.post.thumbnailUrl} name={props.post.username} />
+      <img src={props.post.imageUrl} alt="image" />
+
+      <CommentSectionContainer />
+    </div>
+  );
+};
 
 export default Post;

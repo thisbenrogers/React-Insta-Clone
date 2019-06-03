@@ -1,15 +1,14 @@
 import React from "react";
-import PostHeader from "./PostHeader";
+import Post from "./Post";
 
-class PostsContainer extends React.Component {
-  render() {
-    return (
-      <div className="posts-container">
-        <p>Posts Container</p>
-        <PostHeader />
-      </div>
-    );
-  }
-}
+const PostsContainer = props => {
+  return (
+    <div className="posts-container">
+      {props.posts.map(post => {
+        return <Post key={post.id} post={post} />;
+      })}
+    </div>
+  );
+};
 
 export default PostsContainer;
