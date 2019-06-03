@@ -71,7 +71,7 @@ function SearchBarContainer() {
       <NavHeader>
         <NavLeft>
           <p>
-            <i class="fab fa-instagram" /> | Instagram
+            <i className="fab fa-instagram" /> | Instagram
           </p>
         </NavLeft>
 
@@ -81,15 +81,15 @@ function SearchBarContainer() {
 
         <NavRight>
           <MenuLink href="#">
-            <i class="far fa-compass" />
+            <i className="far fa-compass" />
           </MenuLink>
 
           <MenuLink href="#">
-            <i class="far fa-heart" />
+            <i className="far fa-heart" />
           </MenuLink>
 
           <MenuLink href="#">
-            <i class="far fa-user" />
+            <i className="far fa-user" />
           </MenuLink>
         </NavRight>
       </NavHeader>
