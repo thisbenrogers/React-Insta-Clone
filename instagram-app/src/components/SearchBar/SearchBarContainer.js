@@ -51,7 +51,7 @@ const NavRight = styled.div`
   display: flex;
   width: 33.333%;
   text-align: right;
-
+  justify-content: flex-end;
   p {
     margin-right: 20px;
   }
