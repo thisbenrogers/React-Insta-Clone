@@ -19,7 +19,6 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <p>App.js</p>
           <SearchBarContainer />
         </header>
         <main>

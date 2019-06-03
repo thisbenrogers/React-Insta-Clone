@@ -1,13 +1,13 @@
 import React from "react";
 
-class Comment extends React.Component {
-  render() {
-    return (
-      <div className="comment-container">
-        <p>comment</p>
-      </div>
-    );
-  }
-}
+const Comment = props => {
+  return (
+    <div className="comment-container">
+      <p>
+        <strong>{props.user}</strong> {props.comment}
+      </p>
+    </div>
+  );
+};
 
 export default Comment;

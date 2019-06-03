@@ -2,16 +2,21 @@ import React from "react";
 import Comment from "./Comment";
 import CommentInput from "./CommentInput";
 
-class CommentSectionContainer extends React.Component {
-  render() {
-    return (
-      <div className="comment-section-container">
-        <p>Comment Section Container</p>
-        <Comment />
-        <CommentInput />
-      </div>
-    );
-  }
-}
+const CommentSectionContainer = props => {
+  return (
+    <div className="comment-section-container">
+      {props.comments.map(comment => {
+        return (
+          <Comment
+            key={comment.id}
+            comment={comment.text}
+            user={comment.username}
+          />
+        );
+      })}
+      <CommentInput />
+    </div>
+  );
+};
 
 export default CommentSectionContainer;

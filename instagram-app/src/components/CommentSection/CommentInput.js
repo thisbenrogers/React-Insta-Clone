@@ -4,7 +4,9 @@ class CommentInput extends React.Component {
   render() {
     return (
       <div className="input-container">
-        <p>input</p>
+        <form>
+          <input type="text" />
+        </form>
       </div>
     );
   }
