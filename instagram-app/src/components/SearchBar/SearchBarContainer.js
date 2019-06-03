@@ -20,6 +20,9 @@ const NavHeader = styled.div`
 const NavLeft = styled.div`
   width: 33.333%;
   text-align: left;
+  p {
+    color: grey;
+  }
 `;
 
 const NavCenter = styled.div`
@@ -52,34 +55,41 @@ const NavRight = styled.div`
   width: 33.333%;
   text-align: right;
   justify-content: flex-end;
-  p {
+  i {
     margin-right: 20px;
   }
 `;
 
-const MenuLink = styled.a``;
+const MenuLink = styled.a`
+  text-decoration: none;
+  color: grey;
+`;
 
 function SearchBarContainer() {
   return (
     <Nav>
       <NavHeader>
-        <NavLeft>Instagram</NavLeft>
+        <NavLeft>
+          <p>
+            <i class="fab fa-instagram" /> | Instagram
+          </p>
+        </NavLeft>
 
         <NavCenter>
-          <Input type="text" placeholder="Search" />
+          <Input type="text" placeholder="🔍 Search" />
         </NavCenter>
 
         <NavRight>
           <MenuLink href="#">
-            <p>compass</p>
+            <i class="far fa-compass" />
           </MenuLink>
 
           <MenuLink href="#">
-            <p>heart</p>
+            <i class="far fa-heart" />
           </MenuLink>
 
           <MenuLink href="#">
-            <p>user</p>
+            <i class="far fa-user" />
           </MenuLink>
         </NavRight>
       </NavHeader>
