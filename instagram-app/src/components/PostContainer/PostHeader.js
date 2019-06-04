@@ -8,7 +8,7 @@ const Header = styled.div`
 const Img = styled.img`
   height: 40px;
   width: 40px;
-  margin: 10px;
+  margin: 20px;
   border-radius: 50%;
 `;
 

@@ -1,15 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import styled from "styled-components";
+
 import Post from "./Post";
+
+const Posts = styled.div`
+  max-width: 1010px;
+  padding: 26px 20px;
+  width: 100%;
+  margin: 0 auto;
+`;
 
 const PostsContainer = props => {
   return (
-    <div className="posts-container">
+    <Posts className="posts-container">
       {props.posts.map(post => {
         return <Post key={post.id} post={post} />;
       })}
-    </div>
+    </Posts>
   );
 };
 
