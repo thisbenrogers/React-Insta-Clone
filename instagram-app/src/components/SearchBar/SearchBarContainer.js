@@ -27,7 +27,9 @@ const NavLeft = styled.div`
   h2 {
     color: grey;
     svg {
-      margin-right: 10px;
+      margin: 0 10px;
+      padding: 0 10px 0 0;
+      border-right: solid 1px grey;
     }
   }
 `;
@@ -78,7 +80,7 @@ const SearchBarContainer = () => {
       <NavHeader>
         <NavLeft>
           <h2>
-            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faInstagram} size="lg" />
             Instagram
           </h2>
         </NavLeft>
