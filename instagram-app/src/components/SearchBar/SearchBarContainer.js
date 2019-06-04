@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faCompass, faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
+
 import "./SearchBar.css";
 
 const Nav = styled.div`
@@ -20,8 +24,11 @@ const NavHeader = styled.div`
 const NavLeft = styled.div`
   width: 33.333%;
   text-align: left;
-  p {
+  h2 {
     color: grey;
+    svg {
+      margin-right: 10px;
+    }
   }
 `;
 
@@ -55,7 +62,7 @@ const NavRight = styled.div`
   width: 33.333%;
   text-align: right;
   justify-content: flex-end;
-  i {
+  svg {
     margin-right: 20px;
   }
 `;
@@ -65,14 +72,15 @@ const MenuLink = styled.a`
   color: grey;
 `;
 
-function SearchBarContainer() {
+const SearchBarContainer = () => {
   return (
     <Nav>
       <NavHeader>
         <NavLeft>
-          <p>
-            <i className="fab fa-instagram" /> | Instagram
-          </p>
+          <h2>
+            <FontAwesomeIcon icon={faInstagram} />
+            Instagram
+          </h2>
         </NavLeft>
 
         <NavCenter>
@@ -81,20 +89,20 @@ function SearchBarContainer() {
 
         <NavRight>
           <MenuLink href="#">
-            <i className="far fa-compass" />
+            <FontAwesomeIcon icon={faCompass} />
           </MenuLink>
 
           <MenuLink href="#">
-            <i className="far fa-heart" />
+            <FontAwesomeIcon icon={faHeart} />
           </MenuLink>
 
           <MenuLink href="#">
-            <i className="far fa-user" />
+            <FontAwesomeIcon icon={faUser} />
           </MenuLink>
         </NavRight>
       </NavHeader>
     </Nav>
   );
-}
+};
 
 export default SearchBarContainer;
