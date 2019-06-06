@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import moment from "moment";
+import PropTypes from "prop-types";
+// import moment from "moment";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -15,12 +16,12 @@ const Action = styled.div`
   }
 `;
 
-const Ago = styled.p``;
+// const Ago = styled.p``;
 
 const Likes = styled.p``;
 
 const CommentSectionContainer = props => {
-  console.log(props.time);
+  // console.log(props.time);
   return (
     <Action className="comment-section-container">
       <FontAwesomeIcon icon={faHeart} size="lg" fixedWidth />
@@ -43,11 +44,19 @@ const CommentSectionContainer = props => {
         );
       })}
       {/* end of Comment .map */}
-      <Ago>{moment(props.time).fromNow()}</Ago>
+      {/* <Ago>{moment(props.time).fromNow()}</Ago> */}
       {/* TODO add timestamp and bottom border */}
       <CommentInput />
     </Action>
   );
+};
+
+CommentSectionContainer.propTypes = {
+  likes: PropTypes.number,
+  comments: PropTypes.array,
+  id: PropTypes.string,
+  text: PropTypes.string,
+  username: PropTypes.string
 };
 
 export default CommentSectionContainer;

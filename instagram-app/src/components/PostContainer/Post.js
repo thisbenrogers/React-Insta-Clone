@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import CommentSectionContainer from "../CommentSection/CommentSectionContainer";
 import PostHeader from "./PostHeader";
@@ -26,6 +27,15 @@ const Post = props => {
       />
     </PostWrapper>
   );
+};
+
+Post.propTypes = {
+  thumbnailUrl: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  likes: PropTypes.number.isRequired,
+  comments: PropTypes.arrayOf(PropTypes.object),
+  timestamp: PropTypes.string.isRequired
 };
 
 export default Post;

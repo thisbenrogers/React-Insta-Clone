@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Header = styled.div`
   display: flex;
@@ -24,6 +25,11 @@ const PostHeader = props => {
       <Name>{props.name}</Name>
     </Header>
   );
+};
+
+PostHeader.propTypes = {
+  thumb: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default PostHeader;
