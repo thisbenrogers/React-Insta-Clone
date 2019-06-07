@@ -10,8 +10,14 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    dummyData
+    data: []
   };
+
+  componentDidMount() {
+    this.setState({
+      data: dummyData
+    });
+  }
 
   render() {
     return (
@@ -20,7 +26,7 @@ class App extends React.Component {
           <SearchBarContainer />
         </header>
         <main>
-          <PostsContainer posts={this.state.dummyData} />
+          <PostsContainer posts={this.state.data} />
         </main>
       </div>
     );

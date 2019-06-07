@@ -20,36 +20,39 @@ const Action = styled.div`
 
 const Likes = styled.p``;
 
-const CommentSectionContainer = props => {
+class CommentSectionContainer extends React.Component {
   // console.log(props.time);
-  return (
-    <Action className="comment-section-container">
-      <FontAwesomeIcon icon={faHeart} size="lg" fixedWidth />
-      <FontAwesomeIcon
-        icon={faComment}
-        size="lg"
-        fixedWidth
-        flip="horizontal"
-      />
-      <Likes>
-        <strong>{props.likes || "0"} likes</strong>
-      </Likes>
-      {props.comments.map(comment => {
-        return (
-          <Comment
-            key={comment.id}
-            comment={comment.text}
-            user={comment.username}
-          />
-        );
-      })}
-      {/* end of Comment .map */}
-      {/* <Ago>{moment(props.time).fromNow()}</Ago> */}
-      {/* TODO add timestamp and bottom border */}
-      <CommentInput />
-    </Action>
-  );
-};
+
+  render() {
+    return (
+      <Action className="comment-section-container">
+        <FontAwesomeIcon icon={faHeart} size="lg" fixedWidth />
+        <FontAwesomeIcon
+          icon={faComment}
+          size="lg"
+          fixedWidth
+          flip="horizontal"
+        />
+        <Likes>
+          <strong>{this.props.likes || "0"} likes</strong>
+        </Likes>
+        {this.props.comments.map(comment => {
+          return (
+            <Comment
+              key={comment.id}
+              comment={comment.text}
+              user={comment.username}
+            />
+          );
+        })}
+        {/* end of Comment .map */}
+        {/* <Ago>{moment(props.time).fromNow()}</Ago> */}
+        {/* TODO add timestamp and bottom border */}
+        <CommentInput />
+      </Action>
+    );
+  }
+}
 
 CommentSectionContainer.propTypes = {
   likes: PropTypes.number,
