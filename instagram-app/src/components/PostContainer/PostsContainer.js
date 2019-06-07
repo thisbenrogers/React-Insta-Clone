@@ -12,15 +12,17 @@ const Posts = styled.div`
   margin: 0 auto;
 `;
 
-const PostsContainer = props => {
-  return (
-    <Posts className="posts-container">
-      {props.posts.map(post => {
-        return <Post key={post.id} post={post} />;
-      })}
-    </Posts>
-  );
-};
+class PostsContainer extends React.Component {
+  render() {
+    return (
+      <Posts className="posts-container">
+        {this.props.posts.map(post => {
+          return <Post key={post.id} post={post} />;
+        })}
+      </Posts>
+    );
+  }
+}
 
 Post.propTypes = {
   post: PropTypes.shape({

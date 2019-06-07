@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-// import moment from "moment";
+import Moment from "react-moment";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -16,12 +16,14 @@ const Action = styled.div`
   }
 `;
 
-// const Ago = styled.p``;
+const Ago = styled.p``;
 
 const Likes = styled.p``;
 
 class CommentSectionContainer extends React.Component {
-  // console.log(props.time);
+  addNewComment = event => {
+    event.preventDefault();
+  };
 
   render() {
     return (
@@ -46,13 +48,19 @@ class CommentSectionContainer extends React.Component {
           );
         })}
         {/* end of Comment .map */}
-        {/* <Ago>{moment(props.time).fromNow()}</Ago> */}
-        {/* TODO add timestamp and bottom border */}
-        <CommentInput />
+        <Ago>
+          <Moment parse="MMMM Do YYYY, hh:mm:ss a" fromNow>
+            {this.props.time}
+          </Moment>
+        </Ago>
+        <CommentInput onSubmit={this.addNewComment} />
       </Action>
     );
   }
 }
+
+// parse="MMMM Do YYYY, hh:mm:ss a" fromNow
+// {this.props.postTime}
 
 CommentSectionContainer.propTypes = {
   likes: PropTypes.number,

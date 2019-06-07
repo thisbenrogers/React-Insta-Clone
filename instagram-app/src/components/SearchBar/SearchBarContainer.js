@@ -81,7 +81,7 @@ const SearchBarContainer = () => {
         <NavLeft>
           <h2>
             <FontAwesomeIcon icon={faInstagram} size="lg" />
-            Instagram
+            Benstagram
           </h2>
         </NavLeft>
 
