@@ -1,0 +1,35 @@
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+
+const Header = styled.div`
+  display: flex;
+`;
+
+const Img = styled.img`
+  height: 40px;
+  width: 40px;
+  margin: 20px;
+  border-radius: 50%;
+`;
+
+const Name = styled.p`
+  margin: 0;
+  align-self: center;
+`;
+
+const PostHeader = props => {
+  return (
+    <Header className="post-header-container">
+      <Img src={props.thumb} alt="user thumbnail" />
+      <Name>{props.name}</Name>
+    </Header>
+  );
+};
+
+PostHeader.propTypes = {
+  thumb: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+};
+
+export default PostHeader;
